@@ -218,7 +218,8 @@ int main()
                     else if (ans == "y")
                     {
                         skills = "Qualifying skills.";
-                        ++err;
+                        err++;
+                        
                     }
                     else if (ans== "q")
                     {
@@ -249,7 +250,8 @@ int main()
                     else if (ans == "y")
                     {
                         exp = "Job related experience.";
-                        ++err;
+                        err++;
+                        
                     }
                     else if (ans== "q")
                     {
@@ -276,12 +278,13 @@ int main()
                     {
                         
                         fail = 5;
+                        break;
                     }
                     else if (ans == "y")
                     {
                         edu = "Job related education.";
                         ++err;
-                        fail = 4;
+                        fail = 6;
                     }
                     else if (ans== "q")
                     {
