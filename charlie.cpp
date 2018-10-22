@@ -3,6 +3,7 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -16,10 +17,12 @@ int main()
     string phone    = "N/A";
     string grammer  = "N/A";
     string spelling = "N/A";
+    string email    = "N/A";
     string skills   = "N/A";
     string exp      = "N/A";
     string edu      = "N/A";
     string qual     = "N/A";
+    ofstream applicants;
 
     cout << "+====================================================+" <<endl;
     cout << "+                  RESUME SCREENER!!                 +" <<endl;
@@ -210,11 +213,11 @@ int main()
                     if (ans == "n")
                     {
                         
-                        --fail;
+                        fail = 1;
                     }
                     else if (ans == "y")
                     {
-                        skills = "The Resume Has qualifying skills.";
+                        skills = "Qualifying skills.";
                         ++err;
                     }
                     else if (ans== "q")
@@ -241,11 +244,11 @@ int main()
                     if (ans == "n")
                     {
                         
-                        --fail;
+                        fail = 1;
                     }
                     else if (ans == "y")
                     {
-                        exp = "The Resume Has qualifying skills.";
+                        exp = "Job related experience.";
                         ++err;
                     }
                     else if (ans== "q")
@@ -257,6 +260,7 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
+                }    
                 err = 0;
                 while (err<=0)
                 {
@@ -271,12 +275,13 @@ int main()
                     if (ans == "n")
                     {
                         
-                        --fail;
+                        fail = 1;
                     }
                     else if (ans == "y")
                     {
-                        edu = "The Resume Has a Job related Education.";
+                        edu = "Job related education.";
                         ++err;
+                        ++fail;
                     }
                     else if (ans== "q")
                     {
@@ -305,11 +310,11 @@ int main()
                     if (ans == "n")
                     {
                         
-                        --fail;
+                        fail = 0;
                     }
                     else if (ans == "y")
                     {
-                        exp = "The Resume Has qualifying skills.";
+                        exp = "Job related experience.";
                         ++err;
                     }
                     else if (ans== "q")
@@ -321,6 +326,7 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
+                }    
                 err = 0;
                 while (err<=0)
                 {
@@ -335,12 +341,13 @@ int main()
                     if (ans == "n")
                     {
                         
-                        --fail;
+                        fail = 0;
                     }
                     else if (ans == "y")
                     {
-                        edu = "The Resume Has a Job related Education.";
+                        edu = "Job related education.";
                         ++err;
+                        ++fail;
                     }
                     else if (ans== "q")
                     {
@@ -351,17 +358,17 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
-        }
-        
+                }
+            }
         cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(1800));
         
-        if (fail == 2)
+        if (fail == 3)
         {
             qual = "This Applicant is Incredibly qualified!";
             cout << qual << endl;
         }
-        else if (fail == 1)
+        else if (fail == 2)
         {
             qual = "This Applicant is qualified!";
             cout << qual << endl;
@@ -371,8 +378,26 @@ int main()
             qual = "This Applicant is not qualified";
             cout << qual << endl;
         }
-                
-         cout << "Thank You For Using The Resume Screener!" <<endl;
+
+        applicants.open ("applicants.txt");
+        applicants <<"Name: " << name << endl;
+        applicants <<"Phone Number: " << phone << endl;
+        applicants <<"Email :" << email << "\n\n";
+        applicants <<"Applicants Resume has:" << endl;
+        applicants << grammer << endl;
+        applicants << spelling << endl;
+        applicants << skills << endl;
+        applicants << exp << endl;
+        applicants << edu << endl;
+        applicants << qual << endl;
+        applicants << "\n\n\n\n";
+        applicants.close();
+         
+         
+         
+         
+         
+        cout << "Thank You For Using The Resume Screener!" <<endl;
 
 
 
