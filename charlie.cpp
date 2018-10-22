@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    int fail = 2;
+    int fail = 4;
     int err  = 0;
     string ans;
     string result;
@@ -40,7 +40,7 @@ int main()
     {
         cout << "Please Enter y/n" <<endl;
         cout << endl; cout << endl; cout << endl;
-        cout << "Or Else if you would like to quit the program press 'q'" << endl;
+        cout << "If you would like to quit the program press 'q'" << endl;
         cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
         cout << endl; cout << endl; cout << endl;
@@ -198,7 +198,7 @@ int main()
             }
     }
     err = 0;
-        while (fail == 2)
+        while (fail == 4)
         {
                while (err<=0)
                {
@@ -213,7 +213,7 @@ int main()
                     if (ans == "n")
                     {
                         
-                        fail = 1;
+                        fail = 3;
                     }
                     else if (ans == "y")
                     {
@@ -244,7 +244,7 @@ int main()
                     if (ans == "n")
                     {
                         
-                        fail = 1;
+                        fail = 2;
                     }
                     else if (ans == "y")
                     {
@@ -275,13 +275,13 @@ int main()
                     if (ans == "n")
                     {
                         
-                        fail = 1;
+                        fail = 5;
                     }
                     else if (ans == "y")
                     {
                         edu = "Job related education.";
                         ++err;
-                        ++fail;
+                        fail = 4;
                     }
                     else if (ans== "q")
                     {
@@ -295,7 +295,7 @@ int main()
                 }        
         }
         err = 0;
-        while (fail == 1)
+        while (fail == 3)
         {  
                 while (err<=0)
                 {
@@ -347,7 +347,7 @@ int main()
                     {
                         edu = "Job related education.";
                         ++err;
-                        ++fail;
+                        fail = 5;
                     }
                     else if (ans== "q")
                     {
@@ -360,15 +360,56 @@ int main()
                     }
                 }
             }
+            while (fail == 2)
+            {
+                 while (err<=0)
+                {
+                    cout << "Please Enter y/n" <<endl;
+                    cout << endl; cout << endl; cout << endl;
+                    this_thread::sleep_for(chrono::milliseconds(400));
+                    cout << endl; cout << endl; cout << endl;
+                    this_thread::sleep_for(chrono::milliseconds(400));
+                    cout << "Does the Resume have Job related education?" << endl;
+                    cin >> ans;
+
+                    if (ans == "n")
+                    {
+                        
+                        fail = 0;
+                    }
+                    else if (ans == "y")
+                    {
+                        exp = "Job related education.";
+                        ++err;
+                        fail = 5;
+                    }
+                    else if (ans== "q")
+                    {
+                        cout << "Thank You For Using The Resume Screener" <<endl;
+                        exit(0);
+                    }
+                    else
+                    {
+                    cout << "Error!" << endl;
+                    }
+                }    
+            }
+
+
+
+
+
+
+
         cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(1800));
         
-        if (fail == 3)
+        if (fail == 4)
         {
             qual = "This Applicant is Incredibly qualified!";
             cout << qual << endl;
         }
-        else if (fail == 2)
+        else if (fail == 5)
         {
             qual = "This Applicant is qualified!";
             cout << qual << endl;
