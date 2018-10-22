@@ -382,7 +382,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        exp = "Job related education.";
+                        edu = "Job related education.";
                         ++err;
                         fail = 5;
                     }
