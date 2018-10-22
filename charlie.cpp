@@ -407,7 +407,7 @@ int main()
         cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(1800));
         
-        if (fail == 4)
+        if (fail == 6)
         {
             qual = "This Applicant is Incredibly qualified!";
             cout << qual << endl;
