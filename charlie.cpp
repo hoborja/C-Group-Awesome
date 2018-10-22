@@ -423,7 +423,7 @@ int main()
             cout << qual << endl;
         }
 
-        applicants.open ("applicants.txt");
+        applicants.open ("applicants.txt", fstream::app);
         applicants <<"Name: " << name << endl;
         applicants <<"Phone Number: " << phone << endl;
         applicants <<"Email :" << email << "\n\n";
