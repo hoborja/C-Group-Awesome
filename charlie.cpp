@@ -3,14 +3,15 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
-#include <fstream>
+#include <fstream> //included libraries
 
-using namespace std;
+using namespace std;  //std:: not needed while using the standard namespace
 
 int main()
 {
-    int fail = 4;
-    int err  = 0;
+    int fail = 4; //initialise the variabel "fail" as 4
+    int err  = 0; //initialise the variabel "err" as 0
+    string in[9] {"na","na","na","na","na","na","na","na","na"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
     string ans;
     string result;
     string name     = "N/A";
@@ -21,7 +22,7 @@ int main()
     string skills   = "N/A";
     string exp      = "N/A";
     string edu      = "N/A";
-    string qual     = "N/A";
+    string qual     = "N/A"; //initialising ans,result,
     ofstream applicants;
 
     cout << "+====================================================+" <<endl;
@@ -56,7 +57,7 @@ int main()
             {
                 cout << "Please Type In The Name:" << endl;
                 cin.ignore();
-                getline(cin, name);
+                getline(cin, in[0]);
                 ++err;
             }
             else if (ans== "q")
@@ -89,7 +90,7 @@ int main()
             {
                 cout << "Please Type In The Phone Number:" << endl;
                 cin.ignore();
-                getline(cin, phone);
+                getline(cin, in[1]);
                 ++err;
             }
             else if (ans== "q")
@@ -122,7 +123,7 @@ int main()
             {
                 cout << "Please Type In The Email:" << endl;
                 cin.ignore();
-                getline(cin, email);
+                getline(cin, in[4]);
                 ++err;
             }
             else if (ans== "q")
@@ -153,7 +154,7 @@ int main()
             }
             else if (ans == "n")
             {
-                spelling = "No Spelling Errors.";
+                in[3] = "No Spelling Errors."; //spelling=3
                 ++err;
             }
             else if (ans== "q")
@@ -184,7 +185,7 @@ int main()
             }
             else if (ans == "n")
             {
-                grammer = "No Grammatical Errors.";
+                in[2] = "No Grammatical Errors."; //grammar=2
                 ++err;
             }
             else if (ans== "q")
@@ -217,7 +218,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        skills = "Qualifying skills.";
+                        in[5] = "Qualifying skills."; //skills=5
                         err++;
                         
                     }
@@ -249,7 +250,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        exp = "Job related experience.";
+                        in[6] = "Job related experience."; //exp=6
                         err++;
                         
                     }
@@ -282,7 +283,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        edu = "Job related education.";
+                        in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 6;
                     }
@@ -317,7 +318,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        exp = "Job related experience.";
+                        in[6] = "Job related experience."; //exp=6
                         ++err;
                     }
                     else if (ans== "q")
@@ -348,7 +349,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        edu = "Job related education.";
+                        in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 5;
                     }
@@ -382,7 +383,7 @@ int main()
                     }
                     else if (ans == "y")
                     {
-                        edu = "Job related education.";
+                        in[7] = "Job related education."; //edu-7
                         ++err;
                         fail = 5;
                     }
@@ -409,31 +410,31 @@ int main()
         
         if (fail == 6)
         {
-            qual = "This Applicant is Incredibly qualified!";
-            cout << qual << endl;
+            in[8] = "This Applicant is Incredibly qualified!"; //qual=8
+            cout << in[8] << endl;
         }
         else if (fail == 5)
         {
-            qual = "This Applicant is qualified!";
-            cout << qual << endl;
+            in[8] = "This Applicant is qualified!"; 
+            cout << in[8] << endl;
         }
         else
         {
-            qual = "This Applicant is not qualified";
-            cout << qual << endl;
+            in[8] = "This Applicant is not qualified";
+            cout << in[8] << endl;
         }
-
+//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
         applicants.open ("applicants.txt", fstream::app);
-        applicants <<"Name: " << name << endl;
-        applicants <<"Phone Number: " << phone << endl;
-        applicants <<"Email :" << email << "\n\n";
+        applicants <<"Name: " << in[0] << endl; 
+        applicants <<"Phone Number: " << in[1] << endl; 
+        applicants <<"Email :" << in[4] << "\n\n"; 
         applicants <<"Applicants Resume has:" << endl;
-        applicants << grammer << endl;
-        applicants << spelling << endl;
-        applicants << skills << endl;
-        applicants << exp << endl;
-        applicants << edu << endl;
-        applicants << qual << endl;
+        applicants << in[2] << endl;
+        applicants << in[3] << endl;
+        applicants << in[5] << endl;
+        applicants << in[6] << endl;
+        applicants << in[7] << endl;
+        applicants << in[8] << endl;
         applicants << "\n\n\n\n";
         applicants.close();
          
