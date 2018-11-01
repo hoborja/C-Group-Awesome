@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <chrono> //add if's to break looping//
+#include <chrono> //add if's to fix while loops not breaking correctly nov-1//
 #include <thread>
 #include <cstdlib>
 #include <fstream> //included libraries
@@ -13,16 +13,7 @@ int main()
     int err  = 0; //initialise the variabel "err" as 0
     string in[9] {"na","na","na","na","na","na","na","na","na"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
     string ans;
-    string result;
-    string name     = "N/A";
-    string phone    = "N/A";
-    string grammer  = "N/A";
-    string spelling = "N/A";
-    string email    = "N/A";
-    string skills   = "N/A";
-    string exp      = "N/A";
-    string edu      = "N/A";
-    string qual     = "N/A"; //initialising ans,result,
+    string result;                            //variables
     ofstream applicants;
 
     cout << "+====================================================+" <<endl;
@@ -30,7 +21,7 @@ int main()
     cout << "+                        by:                         +" <<endl;
     cout << "+                    Jamie Hobor                     +" <<endl;
     cout << "+====================================================+" <<endl;
-    this_thread::sleep_for(chrono::milliseconds(800));
+    this_thread::sleep_for(chrono::milliseconds(800)); // this is a timed delay before next code is run
     cout << endl;
     cout << endl;
     cout << endl;
