@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <chrono>
+#include <chrono> //add if's to break looping//
 #include <thread>
 #include <cstdlib>
 #include <fstream>
@@ -213,7 +213,8 @@ int main()
                     if (ans == "n")
                     {
                         
-                        fail = 3;
+                        --fail;
+                        break;
                     }
                     else if (ans == "y")
                     {
@@ -246,6 +247,7 @@ int main()
                     {
                         
                         fail = 2;
+                        break;
                     }
                     else if (ans == "y")
                     {
@@ -314,6 +316,7 @@ int main()
                     {
                         
                         fail = 0;
+                        break;
                     }
                     else if (ans == "y")
                     {
@@ -345,6 +348,7 @@ int main()
                     {
                         
                         fail = 0;
+                        break;
                     }
                     else if (ans == "y")
                     {
@@ -379,6 +383,7 @@ int main()
                     {
                         
                         fail = 0;
+                        break;
                     }
                     else if (ans == "y")
                     {
