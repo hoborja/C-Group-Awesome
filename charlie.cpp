@@ -11,7 +11,8 @@ int main()
 {
     int fail = 4; //initialise the variabel "fail" as 4
     int err  = 0; //initialise the variabel "err" as 0
-    string in[9] {"na","na","na","na","na","na","na","na","na"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
+    string in[9] {"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
+    string ref[3] {"No References", "Only one Reference", "Two References"};
     string ans;
     string result;                            //variables
     ofstream applicants;
