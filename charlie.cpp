@@ -47,7 +47,7 @@ int main()
 {
     int fail = 4; //initialize the variable "fail" as 4
     int err  = 0; //initialize the variable "err" as 0
-    int yrsExp;  
+    int yrsExp;  //initialize the variable "yrsExp"
     string in[9] {"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
     string ref[3] {"No References", "Only one Reference", "Two References"};
     string refName[3] {"No References", "No References", "No References"};
@@ -56,7 +56,7 @@ int main()
     ofstream applicants;
     ofstream refFile;
     string candType;
-
+    //send to the screen the header below
     cout << "+====================================================+" <<endl;
     cout << "+                  RESUME SCREENER!!                 +" <<endl;
     cout << "+                        by:                         +" <<endl;
@@ -106,7 +106,7 @@ int main()
     }
     err = 0;
         while (err<=0)
-    {
+    { //function to check for phone number or not, if the user provides one enter it
         cout << "Please Enter y/n" <<endl;
         cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
@@ -139,7 +139,7 @@ int main()
     }
     err = 0;
         while (err<=0)
-    {
+    { //function to check for email or not, if the user provides one enter it
         cout << "Please Enter y/n" <<endl;
         cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
@@ -172,7 +172,7 @@ int main()
     }
     err = 0;
         while (err<=0)
-    {
+    { //function to check for spelling errors or not, if the user does, enter "Garbage", if not enter "No Spelling Errors"
         cout << "Please Enter y/n" <<endl;
         cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
@@ -203,7 +203,7 @@ int main()
     }
      err = 0;
         while (err<=0)
-    {
+    { //function to check for Grammatical errors or not, if the user does, enter "Garbage", if not enter "No Grammatical Errors"
         cout << "Please Enter y/n" <<endl;
         cout << endl; cout << endl; cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
@@ -232,7 +232,7 @@ int main()
                 cout << "Error!" << endl;
             }
     }
-    err = 0;
+    err = 0; //function to check for qualifying skills or not, if the user does, enter move onto next section, if not break program
         while (fail == 4)
         {
                while (err<=0)
@@ -305,7 +305,8 @@ int main()
                 if(fail == 4){   
                 err = 0;
                 while (err<=0)
-                {
+                {  
+                
                     cout << "Please Enter y/n" <<endl;
                     cout << endl; cout << endl; cout << endl;
                     this_thread::sleep_for(chrono::milliseconds(400));
