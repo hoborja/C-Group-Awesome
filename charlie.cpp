@@ -7,6 +7,42 @@
 
 using namespace std;  //std:: not needed while using the standard namespace
 
+void references(string ref[3],int refCount) {
+    cin.ignore();
+    for(int refCount = 0; refCount < 3; ++refCount) {
+        string name;
+        string address;
+        string phone;
+        string email;
+        string company;
+        string position;
+        cout << "Please enter reference Name: " << endl;
+        getline(cin, name);
+        cout << "Please enter the company " << name << " worked at: " << endl;
+        getline(cin, company);
+        cout << "Please enter "<< name << "'s Address: " << endl;
+        getline(cin, address);
+        cout << "Please enter "<< name << "'s phone number: " << endl;
+        getline(cin, phone);
+        cout << "Please enter "<< name << "'s Email: " << endl;
+        getline(cin, email);
+        cout << "Please enter " << name << "'s Position in " << company << ": " << endl;
+        getline(cin, position);
+        ref[refCount] = "Referance's name: " + name + "\nReference's company: " + company + "\nReference's address: " + address + 
+        "\nReference's phone number: " + phone + "\nReference's email address: " + email + "\nReference's position: " + position + "\n";
+    }
+} //function for references
+
+void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile) {
+    for(int refCount = 0; refCount < 3; ++refCount){
+        
+        refFile.open ("references.txt", fstream::app);
+        refFile << "Candidate name: " << in[0] << "\nReference number: " << "(" << refCount<< ")" << "\n\n\n";
+        refFile << "Reference: " << ref[refCount] << endl;
+        refFile.close();
+    }
+}//function for reference
+
 int main()
 {
     int fail = 4; //initialize the variable "fail" as 4
@@ -14,9 +50,11 @@ int main()
     int yrsExp;  
     string in[9] {"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
     string ref[3] {"No References", "Only one Reference", "Two References"};
+    string refName[3] {"No References", "No References", "No References"};
     string ans;
     string result;                            //variables
     ofstream applicants;
+    ofstream refFile;
     string candType;
 
     cout << "+====================================================+" <<endl;
@@ -33,37 +71,37 @@ int main()
     cout << endl;
 
 
-    while (err<=0)
+    while (err<=0) //while the variable "err" equals 0 this loop will run
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
-        cout << "If you would like to quit the program press 'q'" << endl;
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
-        cout << "Does the Resume have a name on it?" << endl;
-        cin >> ans;
+        cout << "Please Enter y/n" <<endl; //instructions for user
+        cout << endl; cout << endl; cout << endl; //user input
+        cout << "If you would like to quit the program press 'q'" << endl;//instructions for user
+        cout << endl; cout << endl; cout << endl;//user input
+        this_thread::sleep_for(chrono::milliseconds(400));// this is a timed delay before next code is run
+        cout << endl; cout << endl; cout << endl;//user input
+        cout << "Does the Resume have a name on it?" << endl; //question for user
+        cin >> ans; //user answer
 
-            if (ans == "n")
+            if (ans == "n") //if user types "n" for ans input, play this loop
             {
-                cout << "Garbage!" << endl;
-                exit(0);
+                cout << "Garbage!" << endl; //text for user
+                exit(0); //exits the program
             }
-            else if (ans == "y")
+            else if (ans == "y") //if user types "y" for ans input, play this loop
             {
-                cout << "Please Type In The Name:" << endl;
+                cout << "Please Type In The Name:" << endl; //instructions for user
                 cin.ignore();
                 getline(cin, in[0]);
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q")//if user types "q" for ans input, play this loop
             {
-                cout << "Thank You For Using The Resume Screener" <<endl;
-                exit(0);
+                cout << "Thank You For Using The Resume Screener" <<endl; //exit message
+                exit(0); //exits the program
             }
-            else
+            else //if ans doesn't equal n,y, or q this plays
             {
-                cout << "Error!" << endl;
+                cout << "Error!" << endl; //error message
             }
     }
     err = 0;
@@ -405,20 +443,34 @@ int main()
                     }
                 }    
             }
-            /*
             if (yrsExp == 0){
                 candType = "Intern Candidate";
-                references(ref, 3);
+                references(refName, 3);
+                for(int i=0; i < 3; ++i) {
+                    cout <<"\n\n\n\n";
+                    cout << refName[i] << endl;
+                }
+                referencesWrite(refName, in, 3, refFile);
             }
-            else if (yrsExp <= 5){
+            else if (yrsExp <= 5 && yrsExp > 0){
                  candType = "Junior Candidate"; 
-                 references(ref, 3);
+                 references(refName, 3);
+                for(int i=0; i < 3; ++i) {
+                    cout <<"\n\n\n\n";
+                    cout << refName[i] << endl;
+                }
+                referencesWrite(refName, in, 3, refFile);
             }
-            else if (yrsExp >=5){
+            else if (yrsExp > 5){
                 candType = "Senior Candidate";
-                references(ref, 3);
+                references(refName, 3);
+                for(int i=0; i < 3; ++i) {
+                    cout <<"\n\n\n\n";
+                    cout << refName[i] << endl;
+                }
+                referencesWrite(refName, in, 3, refFile);
             }
-            */// Please implement into Job related experience
+            
 
 
         cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;

@@ -1,0 +1,33 @@
+Candidate name: alex
+Reference number: (0)
+
+
+Reference: Referance's name: tina
+Reference's company: tina comp
+Reference's address: tina ddress
+Reference's phone number: tina phone
+Reference's email address: tina email
+Reference's position: tina posit
+
+Candidate name: alex
+Reference number: (1)
+
+
+Reference: Referance's name: jamie
+Reference's company: jamie comp
+Reference's address: jamie address
+Reference's phone number: jamie phone
+Reference's email address: jamie email
+Reference's position: jamie posit
+
+Candidate name: alex
+Reference number: (2)
+
+
+Reference: Referance's name: zach
+Reference's company: zach comp
+Reference's address: zach address
+Reference's phone number: zach phone
+Reference's email address: zach email
+Reference's position: zach posit
+
