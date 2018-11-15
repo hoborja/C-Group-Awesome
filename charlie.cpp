@@ -24,6 +24,7 @@ int main()
     cout << "+                        by:                         +" <<endl;
     cout << "+                     Jamie Hobor                    +" <<endl;
     cout << "+                     Tina Filion                    +" <<endl;
+    cout << "+                    Alex Bonhomme                   +" <<endl;
     cout << "+====================================================+" <<endl;
     this_thread::sleep_for(chrono::milliseconds(800)); // this is a timed delay before next code is run
     cout << endl;
