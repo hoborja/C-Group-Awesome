@@ -29,10 +29,11 @@ void references(string ref[3],int refCount) {
     }
 }
 
-void referencesWrite(string ref[3], int refCount, ofstream& refFile) {
+void referencesWrite(string ref[3],/*string in[9],*/ int refCount, ofstream& refFile) {
     for(int refCount = 0; refCount < 3; ++refCount){
         
         refFile.open ("test.txt", fstream::app);
+        //refFile << "Candidate name: " << in[0] "\n\n\n";
         refFile << "Reference: " << ref[refCount] << endl;
         refFile.close();
     }
