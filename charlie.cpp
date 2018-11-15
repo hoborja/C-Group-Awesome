@@ -225,6 +225,7 @@ int main()
                     }
                 }   
                 err = 0;
+                if(fail == 4){
                 while (err<=0)
                 {
                     cout << "Please Enter y/n" <<endl;
@@ -256,7 +257,9 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
-                }    
+                } 
+                }
+                if(fail == 4){   
                 err = 0;
                 while (err<=0)
                 {
@@ -289,6 +292,7 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
+                }
                 }        
         }
         err = 0;
@@ -324,7 +328,8 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
-                }    
+                }
+                if( fail == 3){    
                 err = 0;
                 while (err<=0)
                 {
@@ -357,6 +362,7 @@ int main()
                     {
                     cout << "Error!" << endl;
                     }
+                }
                 }
             }
             while (fail == 2)
