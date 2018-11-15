@@ -1,3 +1,24 @@
 References: alex
 References: jamie
 References: tina
+Reference: Referance's name: alex
+Reference's company: sobey
+Reference's address: 244 beddington drive
+Reference's phone number: 403-880-2378
+Reference's email address: alex.romeo.bonhomme@hotmail.com
+Reference's position: cash
+
+Reference: Referance's name: jamie
+Reference's company: jamie company
+Reference's address: 244 jamie address
+Reference's phone number: 888 888 8888
+Reference's email address: jamie@email.com
+Reference's position: jamie pos
+
+Reference: Referance's name: tina
+Reference's company: tina company
+Reference's address: 244 tina ddress
+Reference's phone number: 888 888 8888
+Reference's email address: tina@email.com
+Reference's position: tina pos
+
