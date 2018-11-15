@@ -9,18 +9,21 @@ using namespace std;  //std:: not needed while using the standard namespace
 
 int main()
 {
-    int fail = 4; //initialise the variabel "fail" as 4
-    int err  = 0; //initialise the variabel "err" as 0
+    int fail = 4; //initialize the variable "fail" as 4
+    int err  = 0; //initialize the variable "err" as 0
+    int yrsExp;  
     string in[9] {"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
     string ref[3] {"No References", "Only one Reference", "Two References"};
     string ans;
     string result;                            //variables
     ofstream applicants;
+    string candType;
 
     cout << "+====================================================+" <<endl;
     cout << "+                  RESUME SCREENER!!                 +" <<endl;
     cout << "+                        by:                         +" <<endl;
-    cout << "+                    Jamie Hobor                     +" <<endl;
+    cout << "+                     Jamie Hobor                    +" <<endl;
+    cout << "+                     Tina Filion                    +" <<endl;
     cout << "+====================================================+" <<endl;
     this_thread::sleep_for(chrono::milliseconds(800)); // this is a timed delay before next code is run
     cout << endl;
@@ -401,11 +404,20 @@ int main()
                     }
                 }    
             }
-
-
-
-
-
+            /*
+            if (yrsExp == 0){
+                candType = "Intern Candidate";
+                references(ref, 3);
+            }
+            else if (yrsExp <= 5){
+                 candType = "Junior Candidate"; 
+                 references(ref, 3);
+            }
+            else if (yrsExp >=5){
+                candType = "Senior Candidate";
+                references(ref, 3);
+            }
+            */// Please implement into Job related experience
 
 
         cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
