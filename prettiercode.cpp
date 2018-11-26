@@ -9,8 +9,11 @@
 
 using namespace std;  //std:: not needed while using the standard namespace
 
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 void quitMsg (){ 
-    cout << "Thank you for using The Resume Screener!" << endl;
+        SetConsoleTextAttribute(hConsole, 14);
+    cout << "THANK YOU FOR USING THE RESUME SCREENER!" << endl;
+        SetConsoleTextAttribute(hConsole, 15);
     }
 
 int main()
@@ -26,16 +29,22 @@ int main()
     string candType;
     
 
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //for colors
     
-    SetConsoleTextAttribute(hConsole, 11);
-    cout << "+====================================================+" <<endl;
-    cout << "+                  RESUME SCREENER!!                 +" <<endl;
-    cout << "+                        by:                         +" <<endl;
-    cout << "+                    Jamie Hobor                     +" <<endl;
-    cout << "+                    Tina Filion                     +" <<endl;
-    cout << "+====================================================+" <<endl;
-    SetConsoleTextAttribute(hConsole, 15);
+    
+    cout << endl; cout << endl; cout << endl;
+        SetConsoleTextAttribute(hConsole, 11);  //color
+    cout << "**********************************************************" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                  RESUME SCREENER                   ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                        by:                         ***" <<endl;
+    cout << "***                    Jamie Hobor                     ***" <<endl;
+    cout << "***                    Tina Filion                     ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "**********************************************************" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
     
     this_thread::sleep_for(chrono::milliseconds(800)); // this is a timed delay before next code is run
     cout << endl;
@@ -43,166 +52,243 @@ int main()
     cout << endl;
     cout << endl;
  
-
     while (err<=0)
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
-        cout << "If you would like to quit the program press 'q'" << endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << "(If you would like to quit the program press 'Q' at any time)" << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl;
+            SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+            SetConsoleTextAttribute(hConsole, 15); 
+        //cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
-        cout << "Does the Resume have a name on it?" << endl;
+        cout << endl; 
+            
+            SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "         Does the resume have a name on it?         " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+        cout << endl;
         cin >> ans;
+        cout << endl; cout << endl;
 
-            if (ans == "n")
+            if (ans == "n" || ans == "N")
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "y")
+            else if (ans == "y" || ans == "Y")
             {
-                cout << "Please Type In The Name:" << endl;
+               
+                cout << "Please enter name:" << endl << endl;
                 cin.ignore();
                 getline(cin, in[0]);
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
                 quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
         while (err<=0)
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+        SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
+        //cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << "Does the Resume have a Phone Number?" << endl;
+        
+            SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "        Does the resume have a phone number?        " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);         
+        cout << endl;
         cin >> ans;
+        cout << endl; cout << endl;
 
-            if (ans == "n")
+            if (ans == "n" || ans == "N")
             {
+                  SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                  SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "y")
+            else if (ans == "y" || ans == "Y")
             {
-                cout << "Please Type In The Phone Number:" << endl;
+                cout << "Please enter phone number:" << endl << endl;
                 cin.ignore();
                 getline(cin, in[1]);
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
                 quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
         while (err<=0)
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+            SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+            SetConsoleTextAttribute(hConsole, 15); 
+        //cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << "Does the Resume have a Email?" << endl;
+        
+            SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "       Does the resume have a e-mail address?       " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+        cout << endl;
         cin >> ans;
+        cout << endl; cout << endl;
 
-            if (ans == "n")
+            if (ans == "n" || ans == "N")
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "y")
+            else if (ans == "y" || ans == "Y")
             {
-                cout << "Please Type In The Email:" << endl;
+                cout << "Please enter e-mail address:" << endl << endl;
                 cin.ignore();
                 getline(cin, in[4]);
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
                 quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
         while (err<=0)
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+            SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+            SetConsoleTextAttribute(hConsole, 15); 
+        //cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << "Does the Resume have any Spelling errors?" << endl;
+        
+            SetConsoleTextAttribute(hConsole, 12);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "      Does the resume have any spelling errors?     " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+        cout << endl;
         cin >> ans;
-
-            if (ans == "y")
+        
+            if (ans == "y" || ans == "Y")
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "n")
+            else if (ans == "n" || ans == "N")
             {
-                in[3] = "No Spelling Errors."; //spelling=3
+                in[3] = "No spelling errors."; //spelling=3
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
                 quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
      err = 0;
         while (err<=0)
     {
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
+            SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+            SetConsoleTextAttribute(hConsole, 15); 
+        //cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; 
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << "Does the Resume have any Grammatical errors?" << endl;
+        
+            SetConsoleTextAttribute(hConsole, 12);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "    Does the resume have any grammatical errors?    " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+        cout << endl;
         cin >> ans;
-
-            if (ans == "y")
+       
+            if (ans == "y" || ans == "Y")
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "n")
+            else if (ans == "n" || ans == "N")
             {
-                in[2] = "No Grammatical Errors."; //grammar=2
+                in[2] = "No grammatical errors."; //grammar=2
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
                 quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
@@ -210,68 +296,92 @@ int main()
         {
                while (err<=0)
                {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have any Qualifying skills?" << endl;
+                    
+                        SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "      Does the resume have qualifying skills?       " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
-
-                    if (ans == "n")
+                    
+                    if (ans == "n" || ans == "N")
                     {
-                        
-                        --fail;
+                        fail;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[5] = "Qualifying skills."; //skills=5
                         err++;
                         
                     }
-                    else if (ans== "q")
+                    else if (ans == "q" || ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 }   
                 err = 0;
                 if(fail == 4){
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have Job related experience?" << endl;
+                    
+                    SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "    Does the resume have job related experience?    " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                    SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
-
-                    if (ans == "n")
+                    
+                    if (ans == "n" || ans == "N")
                     {
-                        
                         fail = 2;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[6] = "Job related experience."; //exp=6
                         err++;
                         
                     }
-                    else if (ans== "q")
+                    else if (ans == "q"|| ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 } 
                 }
@@ -279,34 +389,46 @@ int main()
                 err = 0;
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have a Job related education?" << endl;
+                    
+                    SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "   Does the resume have job related education?      " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                    SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
-
-                    if (ans == "n")
+                    
+                    if (ans == "n" || ans == "N")
                     {
-                        
                         fail = 5;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 6;
                     }
-                    else if (ans== "q")
+                    else if (ans == "q" || ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 }
                 }        
@@ -316,67 +438,92 @@ int main()
         {  
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have Job related experience?" << endl;
+                    
+                    SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "    Does the resume have job related experience?    " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                    SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
+                    
 
-                    if (ans == "n")
+                    if (ans == "n" || ans == "N")
                     {
-                        
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[6] = "Job related experience."; //exp=6
                         ++err;
                     }
-                    else if (ans== "q")
+                    else if (ans == "q"|| ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 }
                 if( fail == 3){    
                 err = 0;
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have a Job related education?" << endl;
+                    
+                    SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "    Does the resume have job related education?     " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                    SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
-
-                    if (ans == "n")
+                    
+                    if (ans == "n" || ans == "N")
                     {
-                        
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 5;
                     }
-                    else if (ans== "q")
+                    else if (ans== "q"|| ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 }
                 }
@@ -385,34 +532,46 @@ int main()
             {
                  while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
+                        SetConsoleTextAttribute(hConsole, 14); 
+                    cout << "                 PLEASE ENTER Y/N" <<endl;
+                        SetConsoleTextAttribute(hConsole, 15); 
+                    //cout << endl;
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
+                    cout << endl; 
                     this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << "Does the Resume have Job related education?" << endl;
+                    
+                    SetConsoleTextAttribute(hConsole, 9);
+                    cout << "====================================================" <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "    Does the resume have job related education?     " <<endl;
+                    cout << "                                                    " <<endl;
+                    cout << "====================================================" <<endl;
+                    SetConsoleTextAttribute(hConsole, 15);
+                    cout << endl;
                     cin >> ans;
-
-                    if (ans == "n")
+                    
+                    if (ans == "n" || ans == "N")
                     {
-                        
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y")
+                    else if (ans == "y" || ans == "Y")
                     {
                         in[7] = "Job related education."; //edu-7
                         ++err;
                         fail = 5;
                     }
-                    else if (ans== "q")
+                    else if (ans == "q" || ans == "Q")
                     {
                         quitMsg();
                         exit(0);
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 12);
+                        cout << "Error!" << endl;
+                            SetConsoleTextAttribute(hConsole, 15);
                     }
                 }    
             }
@@ -425,7 +584,7 @@ int main()
                  candType = "Junior Candidate"; 
                  references(ref, 3);
             }
-            else if (yrsExp >= 5){
+            else if (yrsExp > 5){
                 candType = "Senior Candidate";
                 references(ref, 3);
             }
@@ -437,25 +596,31 @@ int main()
         
         if (fail == 6)
         {
-            in[8] = "This Applicant is Incredibly qualified!"; //qual=8
+            in[8] = "This applicant is incredibly qualified!"; //qual=8
+                SetConsoleTextAttribute(hConsole, 10);
             cout << in[8] << endl;
+                SetConsoleTextAttribute(hConsole, 15);
         }
         else if (fail == 5)
         {
-            in[8] = "This Applicant is qualified!"; 
+            in[8] = "This applicant is qualified!"; 
+                SetConsoleTextAttribute(hConsole, 10);
             cout << in[8] << endl;
+                SetConsoleTextAttribute(hConsole, 15);
         }
         else
         {
-            in[8] = "This Applicant is not qualified";
+            in[8] = "This applicant is not qualified";
+                SetConsoleTextAttribute(hConsole, 12);
             cout << in[8] << endl;
+                SetConsoleTextAttribute(hConsole, 15);
         }
 //name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
         applicants.open ("applicants.txt", fstream::app);
         applicants <<"Name: " << in[0] << endl; 
-        applicants <<"Phone Number: " << in[1] << endl; 
+        applicants <<"Phone number: " << in[1] << endl; 
         applicants <<"Email :" << in[4] << "\n\n"; 
-        applicants <<"Applicants Resume has:" << endl;
+        applicants <<"Applicants resume has:" << endl;
         applicants << in[2] << endl;
         applicants << in[3] << endl;
         applicants << in[5] << endl;
@@ -468,41 +633,8 @@ int main()
          
          
          
-         
+        cout << endl;
         quitMsg();
-
-
-
-        
-        
-
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
