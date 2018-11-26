@@ -10,6 +10,7 @@
 using namespace std;  //std:: not needed while using the standard namespace
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
 void quitMsg (){ 
         SetConsoleTextAttribute(hConsole, 14);
     cout << "THANK YOU FOR USING THE RESUME SCREENER!" << endl;
@@ -631,32 +632,32 @@ int main()
         applicants.close();
          
          
-         
+        SetConsoleTextAttribute(hConsole, 14);
+        cout << "                                               000000000                         " << endl;
+        cout << "                                          0000000000000000000                    " << endl;
+        cout << "                                       0000000000000000000000000                 " << endl;
+        cout << "                                    0000000000000000000000000000000              " << endl;
+        cout << "                                  000000000   00000000000   000000000            " << endl;
+        cout << "                                 000000000     000000000     000000000           " << endl;
+        cout << "                                000000000       0000000       000000000          " << endl;
+        cout << "                               00000000000     000000000     00000000000         " << endl;
+        cout << "                              0000000000000   00000000000   0000000000000        " << endl;
+        cout << "                              0000000000000000000000000000000000000000000        " << endl;
+        cout << "                              0000000000000000000000000000000000000000000        " << endl;
+        cout << "                               00000000                         00000000         " << endl;
+        cout << "                                00000000                       00000000          " << endl;
+        cout << "                                  00000000                    00000000           " << endl;
+        cout << "                                   0000000000              0000000000            " << endl;
+        cout << "                                     000000000000000000000000000000              " << endl;
+        cout << "                                        000000000000000000000000                 " << endl;
+        cout << "                                           000000000000000000                    " << endl;
+        cout << "                                               0000000000                        " << endl;
+        SetConsoleTextAttribute(hConsole, 15); 
          
         cout << endl;
         quitMsg();
 
-        SetConsoleTextAttribute(hConsole, 14);
-        cout << "                                         000000000                         " << endl;
-        cout << "                                    0000000000000000000                    " << endl;
-        cout << "                                 0000000000000000000000000                 " << endl;
-        cout << "                              0000000000000000000000000000000              " << endl;
-        cout << "                            000000000   00000000000   000000000            " << endl;
-        cout << "                           000000000     000000000     000000000           " << endl;
-        cout << "                          000000000       0000000       000000000          " << endl;
-        cout << "                         00000000000     000000000     00000000000         " << endl;
-        cout << "                        0000000000000   00000000000   0000000000000        " << endl;
-        cout << "                        0000000000000000000000000000000000000000000        " << endl;
-        cout << "                        0000000000000000000000000000000000000000000        " << endl;
-        cout << "                         00000000                         00000000         " << endl;
-        cout << "                          00000000                       00000000          " << endl;
-        cout << "                            00000000                    00000000           " << endl;
-        cout << "                             0000000000              0000000000            " << endl;
-        cout << "                               000000000000000000000000000000              " << endl;
-        cout << "                                  000000000000000000000000                 " << endl;
-        cout << "                                     000000000000000000                    " << endl;
-        cout << "                                         0000000000                        " << endl;
-        SetConsoleTextAttribute(hConsole, 15);
+        
 
 
     return 0;
