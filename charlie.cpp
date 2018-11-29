@@ -4,8 +4,18 @@
 #include <thread>
 #include <cstdlib>
 #include <fstream> //included libraries
+#include <windows.h> //color library
+#include <conio.h>
 
 using namespace std;  //std:: not needed while using the standard namespace
+
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //for colors
+
+void quitMsg (){ 
+        SetConsoleTextAttribute(hConsole, 14);
+    cout << "THANK YOU FOR USING THE RESUME SCREENER!" << endl;
+        SetConsoleTextAttribute(hConsole, 15);
+    }
 
 void references(string ref[3],int refCount) {
     cin.ignore();
@@ -57,14 +67,24 @@ int main()
     ofstream refFile;
     string candType;
     //send to the screen the header below
-    cout << "+====================================================+" <<endl;
-    cout << "+                  RESUME SCREENER!!                 +" <<endl;
-    cout << "+                        by:                         +" <<endl;
-    cout << "+                     Jamie Hobor                    +" <<endl;
-    cout << "+                     Tina Filion                    +" <<endl;
-    cout << "+                    Alex Bonhomme                   +" <<endl;
-    cout << "+====================================================+" <<endl;
+    
+    cout << endl; cout << endl; cout << endl;
+        SetConsoleTextAttribute(hConsole, 11);  //color
+    cout << "**********************************************************" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                  RESUME SCREENER                   ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                        by:                         ***" <<endl;
+    cout << "***                    Jamie Hobor                     ***" <<endl;
+    cout << "***                    Tina Filion                     ***" <<endl;
+    cout << "***                    Alex Bonhomme                   ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "***                                                    ***" <<endl;
+    cout << "**********************************************************" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
+    
     this_thread::sleep_for(chrono::milliseconds(800)); // this is a timed delay before next code is run
+    
     cout << endl;
     cout << endl;
     cout << endl;
@@ -73,68 +93,99 @@ int main()
 
     while (err<=0) //while the variable "err" equals 0 this loop will run
     {
-        cout << "Please Enter y/n" <<endl; //instructions for user
-        cout << endl; cout << endl; cout << endl; //user input
-        cout << "If you would like to quit the program press 'q'" << endl;//instructions for user
-        cout << endl; cout << endl; cout << endl;//user input
+        cout << "(If you would like to quit the program press 'Q' at any time)" << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl;
+            SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+            SetConsoleTextAttribute(hConsole, 15); 
+        
         this_thread::sleep_for(chrono::milliseconds(400));// this is a timed delay before next code is run
-        cout << endl; cout << endl; cout << endl;//user input
-        cout << "Does the Resume have a name on it?" << endl; //question for user
-        cin >> ans; //user answer
+        cout << endl;//user input
+        
+           SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "         Does the resume have a name on it?         " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+        cout << endl;
+        cin >> ans;
+        cout << endl; cout << endl;       
 
-            if (ans == "n") //if user types "n" for ans input, play this loop
+            if (ans == "n" || ans == "N") //if user types "n" for ans input, play this loop
             {
-                cout << "Garbage!" << endl; //text for user
+                SetConsoleTextAttribute(hConsole, 12);
+            cout << "Garbage!" << endl; //text for user
+                SetConsoleTextAttribute(hConsole, 15);
                 exit(0); //exits the program
             }
-            else if (ans == "y") //if user types "y" for ans input, play this loop
+            else if (ans == "y" || ans == "Y") //if user types "y" for ans input, play this loop
             {
-                cout << "Please Type In The Name:" << endl; //instructions for user
+                cout << "Please enter name:" << endl; //instructions for user
                 cin.ignore();
                 getline(cin, in[0]);
                 ++err;
             }
-            else if (ans== "q")//if user types "q" for ans input, play this loop
+            else if (ans== "q" || ans == "Q")//if user types "q" for ans input, play this loop
             {
-                cout << "Thank You For Using The Resume Screener" <<endl; //exit message
+                quitMsg(); //exit message
                 exit(0); //exits the program
             }
             else //if ans doesn't equal n,y, or q this plays
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl; //error message
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for phone number or not, if the user provides one enter it
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
+        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+        SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
+        
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
+        cout << endl;
         this_thread::sleep_for(chrono::milliseconds(400));
-        cout << "Does the Resume have a Phone Number?" << endl;
+        
+        SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "        Does the resume have a phone number?        " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);         
+        cout << endl;        
         cin >> ans;
+        cout << endl; cout << endl;
 
-            if (ans == "n")
+            if (ans == "n" || ans == "N")
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Garbage!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
-            else if (ans == "y")
+            else if (ans == "y" || ans == "Y")
             {
-                cout << "Please Type In The Phone Number:" << endl;
+                cout << "Please enter phone number:" << endl << endl;
                 cin.ignore();
                 getline(cin, in[1]);
                 ++err;
             }
-            else if (ans== "q")
+            else if (ans== "q" || ans == "Q")
             {
-                cout << "Thank You For Using The Resume Screener" <<endl;
+                quitMsg();
                 exit(0);
             }
             else
             {
+                    SetConsoleTextAttribute(hConsole, 12);
                 cout << "Error!" << endl;
+                    SetConsoleTextAttribute(hConsole, 15);
             }
     }
     err = 0;
