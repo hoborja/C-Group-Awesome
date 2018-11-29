@@ -53,6 +53,26 @@ void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile
     }
 }//function for reference
 
+void errorMsg() {
+    SetConsoleTextAttribute(hConsole, 12);
+    cout << "Error!" << endl; //error message
+    SetConsoleTextAttribute(hConsole, 15);
+}
+
+void garbage() {
+    cout << "Garbage!" << endl;
+}
+
+void yesNoMsg() {
+    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+        SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
+        
+        this_thread::sleep_for(chrono::milliseconds(400));
+        cout << endl;
+        this_thread::sleep_for(chrono::milliseconds(400));
+}
 int main()
 {
     int fail = 4; //initialize the variable "fail" as 4
@@ -116,7 +136,7 @@ int main()
             if (ans == "n" || ans == "N") //if user types "n" for ans input, play this loop
             {
                 SetConsoleTextAttribute(hConsole, 12);
-            cout << "Garbage!" << endl; //text for user
+                garbage(); //function for garbage msg
                 SetConsoleTextAttribute(hConsole, 15);
                 exit(0); //exits the program
             }
@@ -134,22 +154,13 @@ int main()
             }
             else //if ans doesn't equal n,y, or q this plays
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl; //error message
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for phone number or not, if the user provides one enter it
-        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-        SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-        SetConsoleTextAttribute(hConsole, 15); 
-        
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         
         SetConsoleTextAttribute(hConsole, 13);
         cout << "====================================================" <<endl;
@@ -165,7 +176,7 @@ int main()
             if (ans == "n" || ans == "N")
             {
                     SetConsoleTextAttribute(hConsole, 12);
-                cout << "Garbage!" << endl;
+                garbage();
                     SetConsoleTextAttribute(hConsole, 15);
                 exit(0);
             }
@@ -183,25 +194,19 @@ int main()
             }
             else
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for email or not, if the user provides one enter it
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         cout << "Does the Resume have a Email?" << endl;
         cin >> ans;
 
             if (ans == "n")
             {
-                cout << "Garbage!" << endl;
+                garbage();
                 exit(0);
             }
             else if (ans == "y")
@@ -218,23 +223,19 @@ int main()
             }
             else
             {
-                cout << "Error!" << endl;
+                errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for spelling errors or not, if the user does, enter "Garbage", if not enter "No Spelling Errors"
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         cout << "Does the Resume have any Spelling errors?" << endl;
         cin >> ans;
 
             if (ans == "y")
             {
-                cout << "Garbage!" << endl;
+                garbage();
                 exit(0);
             }
             else if (ans == "n")
@@ -249,23 +250,19 @@ int main()
             }
             else
             {
-                cout << "Error!" << endl;
+                errorMsg();
             }
     }
      err = 0;
         while (err<=0)
     { //function to check for Grammatical errors or not, if the user does, enter "Garbage", if not enter "No Grammatical Errors"
-        cout << "Please Enter y/n" <<endl;
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; cout << endl; cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         cout << "Does the Resume have any Grammatical errors?" << endl;
         cin >> ans;
 
             if (ans == "y")
             {
-                cout << "Garbage!" << endl;
+                garbage();
                 exit(0);
             }
             else if (ans == "n")
@@ -280,7 +277,7 @@ int main()
             }
             else
             {
-                cout << "Error!" << endl;
+                errorMsg();
             }
     }
     err = 0; //function to check for qualifying skills or not, if the user does, enter move onto next section, if not break program
@@ -288,11 +285,7 @@ int main()
         {
                while (err<=0)
                {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have any Qualifying skills?" << endl;
                     cin >> ans;
 
@@ -315,18 +308,14 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 }   
                 err = 0;
                 if(fail == 4){
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have Job related experience?" << endl;
                     cin >> ans;
 
@@ -349,7 +338,7 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 } 
                 }
@@ -358,11 +347,7 @@ int main()
                 while (err<=0)
                 {  
                 
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have a Job related education?" << endl;
                     cin >> ans;
 
@@ -385,7 +370,7 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 }
                 }        
@@ -395,11 +380,7 @@ int main()
         {  
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have Job related experience?" << endl;
                     cin >> ans;
 
@@ -421,18 +402,14 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 }
                 if( fail == 3){    
                 err = 0;
                 while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have a Job related education?" << endl;
                     cin >> ans;
 
@@ -455,7 +432,7 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 }
                 }
@@ -464,11 +441,7 @@ int main()
             {
                  while (err<=0)
                 {
-                    cout << "Please Enter y/n" <<endl;
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; cout << endl; cout << endl;
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     cout << "Does the Resume have Job related education?" << endl;
                     cin >> ans;
 
@@ -491,7 +464,7 @@ int main()
                     }
                     else
                     {
-                    cout << "Error!" << endl;
+                    errorMsg();
                     }
                 }    
             }
