@@ -72,3 +72,18 @@ This Applicant is not qualified
 
 
 
+Name: 
+Phone Number: 
+Email :
+
+Applicants Resume has:
+No Grammatical Errors.
+No Spelling Errors.
+N/A
+Job related experience.
+Job related education.
+This Applicant is qualified!
+
+
+
+
