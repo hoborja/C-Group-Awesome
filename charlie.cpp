@@ -469,7 +469,7 @@ int main()
                 }    
             }
             if (yrsExp == 0){
-                candType = "Intern Candidate";
+                candType = "Intern Candidate"; //TWO NO'S STILL ASKS FOR REFERENCES @JAMIE
                 references(refName, 3);
                 for(int i=0; i < 3; ++i) {
                     cout <<"\n\n\n\n";
