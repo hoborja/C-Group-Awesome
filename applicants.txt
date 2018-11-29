@@ -42,3 +42,33 @@ This applicant is incredibly qualified!
 
 
 
+Name: 
+Phone Number: 
+Email :
+
+Applicants Resume has:
+No Grammatical Errors.
+No Spelling Errors.
+Qualifying skills.
+N/A
+N/A
+This Applicant is not qualified
+
+
+
+
+Name: 
+Phone Number: 
+Email :
+
+Applicants Resume has:
+No Grammatical Errors.
+No Spelling Errors.
+N/A
+N/A
+N/A
+This Applicant is not qualified
+
+
+
+

@@ -515,6 +515,7 @@ int main()
         {
             in[8] = "This Applicant is not qualified";
             cout << in[8] << endl;
+            exit(0);
         }
 //name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
         applicants.open ("applicants.txt", fstream::app);
