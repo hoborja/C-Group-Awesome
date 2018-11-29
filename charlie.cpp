@@ -17,7 +17,7 @@ void quitMsg (){
         SetConsoleTextAttribute(hConsole, 15);
     }
 
-void references(string ref[3],int refCount) {
+void references(string ref[3],int refCount) { 
     cin.ignore();
     for(int refCount = 0; refCount < 3; ++refCount) {
         string name;
@@ -71,7 +71,7 @@ void yesNoMsg() {
         
         this_thread::sleep_for(chrono::milliseconds(400));
         cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        this_thread::sleep_for(chrono::milliseconds(400)); 
 }
 int main()
 {

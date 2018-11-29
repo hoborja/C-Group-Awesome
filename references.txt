@@ -163,3 +163,36 @@ Reference's phone number:
 Reference's email address: 
 Reference's position: 
 
+Candidate name: y
+Reference number: (0)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: y
+Reference number: (1)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: y
+Reference number: (2)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+

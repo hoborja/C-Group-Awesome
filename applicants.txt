@@ -87,3 +87,18 @@ This Applicant is qualified!
 
 
 
+Name: y
+Phone Number: y
+Email :
+
+Applicants Resume has:
+No grammatical errors.
+No spelling errors.
+Qualifying skills.
+Job related experience.
+Job related education.
+This applicant is incredibly qualified!
+
+
+
+

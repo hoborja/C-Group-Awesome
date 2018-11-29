@@ -60,7 +60,26 @@ void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile
         refFile.close();
     }
 }//function for reference
+void errorMsg() {
+    SetConsoleTextAttribute(hConsole, 12);
+    cout << "Error!" << endl; //error message
+    SetConsoleTextAttribute(hConsole, 15);
+}
 
+void garbage() {
+    cout << "Garbage!" << endl;
+}
+
+void yesNoMsg() {
+    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+        SetConsoleTextAttribute(hConsole, 14); 
+        cout << "                 PLEASE ENTER Y/N" <<endl;
+        SetConsoleTextAttribute(hConsole, 15); 
+        
+        this_thread::sleep_for(chrono::milliseconds(400));// this is a timed delay before next code is run
+        cout << endl;
+        this_thread::sleep_for(chrono::milliseconds(400)); 
+}
 int main()
 {
     int fail = 4; //initialize the variable "fail" as 4
@@ -102,13 +121,7 @@ int main()
     while (err<=0) //while the variable "err" equals 0 this loop will run
     {
         cout << "(If you would like to quit the program press 'Q' at any time)" << endl;
-        cout << endl; cout << endl; cout << endl; cout << endl;
-            SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-            SetConsoleTextAttribute(hConsole, 15); 
-        
-        this_thread::sleep_for(chrono::milliseconds(400));// this is a timed delay before next code is run
-        cout << endl;//user input
+        yesNoMsg();
         
            SetConsoleTextAttribute(hConsole, 13);
         cout << "====================================================" <<endl;
@@ -123,9 +136,7 @@ int main()
 
             if (ans == "n" || ans == "N") //if user types "n" for ans input, play this loop
             {
-                SetConsoleTextAttribute(hConsole, 12);
-            cout << "Garbage!" << endl; //text for user
-                SetConsoleTextAttribute(hConsole, 15);
+                garbage();
                 exit(0); //exits the program
             }
             else if (ans == "y" || ans == "Y") //if user types "y" for ans input, play this loop
@@ -142,22 +153,13 @@ int main()
             }
             else //if ans doesn't equal n,y, or q this plays
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl; //error message
-                    SetConsoleTextAttribute(hConsole, 15);
+            errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for phone number or not, if the user provides one enter it
-        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-        SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-        SetConsoleTextAttribute(hConsole, 15); 
-        
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl;
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         
         SetConsoleTextAttribute(hConsole, 13);
         cout << "====================================================" <<endl;
@@ -172,9 +174,7 @@ int main()
 
             if (ans == "n" || ans == "N")
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Garbage!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                    garbage();
                 exit(0);
             }
             else if (ans == "y" || ans == "Y")
@@ -191,22 +191,13 @@ int main()
             }
             else
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for email or not, if the user provides one enter it
-        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-            SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-            SetConsoleTextAttribute(hConsole, 15); 
-         
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; 
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         
             SetConsoleTextAttribute(hConsole, 13);
         cout << "====================================================" <<endl;
@@ -221,9 +212,7 @@ int main()
 
             if (ans == "n" || ans == "N")
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Garbage!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                    garbage();
                 exit(0);
             }
             else if (ans == "y" || ans == "Y")
@@ -240,22 +229,13 @@ int main()
             }
             else
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
     err = 0;
         while (err<=0)
     { //function to check for spelling errors or not, if the user does, enter "Garbage", if not enter "No Spelling Errors"
-        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-            SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-            SetConsoleTextAttribute(hConsole, 15); 
-        
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; 
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         
             SetConsoleTextAttribute(hConsole, 12);
         cout << "====================================================" <<endl;
@@ -269,9 +249,7 @@ int main()
         
             if (ans == "y" || ans == "Y")
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Garbage!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                garbage();
                 exit(0);
             }
             else if (ans == "n" || ans == "N")
@@ -286,22 +264,13 @@ int main()
             }
             else
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
      err = 0;
         while (err<=0)
     { //function to check for Grammatical errors or not, if the user does, enter "Garbage", if not enter "No Grammatical Errors"
-        cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
-            SetConsoleTextAttribute(hConsole, 14); 
-        cout << "                 PLEASE ENTER Y/N" <<endl;
-            SetConsoleTextAttribute(hConsole, 15); 
-        
-        this_thread::sleep_for(chrono::milliseconds(400));
-        cout << endl; 
-        this_thread::sleep_for(chrono::milliseconds(400));
+        yesNoMsg();
         
             SetConsoleTextAttribute(hConsole, 12);
         cout << "====================================================" <<endl;
@@ -315,9 +284,7 @@ int main()
        
             if (ans == "y" || ans == "Y")
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Garbage!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                garbage();
                 exit(0);
             }
             else if (ans == "n" || ans == "N")
@@ -332,9 +299,7 @@ int main()
             }
             else
             {
-                    SetConsoleTextAttribute(hConsole, 12);
-                cout << "Error!" << endl;
-                    SetConsoleTextAttribute(hConsole, 15);
+                errorMsg();
             }
     }
     err = 0; //function to check for qualifying skills or not, if the user does, enter move onto next section, if not break program
@@ -342,14 +307,7 @@ int main()
         {
                while (err<=0)
                {
-                     cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     
                         SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -379,23 +337,14 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 }   
                 err = 0;
                 if(fail == 4){
                 while (err<=0)
                 {
-                     cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-                    
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     
                     SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -426,9 +375,7 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 } 
                 }
@@ -437,14 +384,7 @@ int main()
                 while (err<=0)
                 {  
                 
-                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-                    
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     
                    SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -475,9 +415,7 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 }
                 }        
@@ -487,14 +425,7 @@ int main()
         {  
                 while (err<=0)
                 {
-                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-                    //cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
                     
                     SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -524,23 +455,14 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 }
                 if( fail == 3){    
                 err = 0;
                 while (err<=0)
                 {
-                   cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-                     
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                   yesNoMsg();
 
                     SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -571,9 +493,7 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 }
                 }
@@ -582,14 +502,7 @@ int main()
             {
                  while (err<=0)
                 {
-                    cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl;
-                        SetConsoleTextAttribute(hConsole, 14); 
-                    cout << "                 PLEASE ENTER Y/N" <<endl;
-                        SetConsoleTextAttribute(hConsole, 15); 
-                    
-                    this_thread::sleep_for(chrono::milliseconds(400));
-                    cout << endl; 
-                    this_thread::sleep_for(chrono::milliseconds(400));
+                    yesNoMsg();
 
                     SetConsoleTextAttribute(hConsole, 9);
                     cout << "====================================================" <<endl;
@@ -619,9 +532,7 @@ int main()
                     }
                     else
                     {
-                            SetConsoleTextAttribute(hConsole, 12);
-                        cout << "Error!" << endl;
-                            SetConsoleTextAttribute(hConsole, 15);
+                        errorMsg();
                     }
                 }    
             }
