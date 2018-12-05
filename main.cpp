@@ -13,9 +13,9 @@ HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //for colors
 
 void quitMsg (){ 
         SetConsoleTextAttribute(hConsole, 14);
-    cout << "THANK YOU FOR USING THE RESUME SCREENER!" << endl;
+    cout << "THANK YOU FOR USING THE RESUME SCREENER!" << endl;//outputs in color
         SetConsoleTextAttribute(hConsole, 15);
-    }
+    } //quit function
  
 
 void references(string ref[3],int refCount) {
@@ -27,36 +27,36 @@ void references(string ref[3],int refCount) {
         string email;
         string company;
         string position; 
-        cout << endl << endl << endl;
+        cout << endl << endl << endl; //init variables for function
                    SetConsoleTextAttribute(hConsole, 13);
         cout << "====================================================" <<endl;
         cout << "                                                    " <<endl;
         cout << "             ENTER APPLICANTS REFERENCES            " <<endl;
         cout << "                                                    " <<endl;
         cout << "====================================================" <<endl;
-                   SetConsoleTextAttribute(hConsole, 15);  
-        this_thread::sleep_for(chrono::milliseconds(400));
+                   SetConsoleTextAttribute(hConsole, 15);  //color
+        this_thread::sleep_for(chrono::milliseconds(400)); //time delay
         cout << endl << endl << endl;     
-        cout << "Please enter reference Name: " << endl << endl;
-        getline(cin, name);
+        cout << "Please enter reference Name: " << endl << endl; //user instruction
+        getline(cin, name); //takes string input
         cout << endl << endl;
-        cout << "Please enter the company " << name << " worked at: " << endl << endl;
-        getline(cin, company);
+        cout << "Please enter the company " << name << " worked at: " << endl << endl; //user instruction
+        getline(cin, company);//takes string input
         cout << endl << endl;
-        cout << "Please enter "<< company << "'s Address: " << endl << endl;
-        getline(cin, address);
+        cout << "Please enter "<< company << "'s Address: " << endl << endl;//user instruction
+        getline(cin, address);//takes string input
         cout << endl << endl;
-        cout << "Please enter "<< name << "'s phone number: " << endl << endl;
-        getline(cin, phone);
+        cout << "Please enter "<< name << "'s phone number: " << endl << endl;//user instruction
+        getline(cin, phone);//takes string input
         cout << endl << endl;
-        cout << "Please enter "<< name << "'s Email: " << endl << endl;
-        getline(cin, email);
+        cout << "Please enter "<< name << "'s Email: " << endl << endl;//user instruction
+        getline(cin, email);//takes string input
         cout << endl << endl;
-        cout << "Please enter " << name << "'s Position in " << company << ": " << endl << endl;
-        getline(cin, position);
+        cout << "Please enter " << name << "'s Position in " << company << ": " << endl << endl;//user instruction
+        getline(cin, position);//takes string input
         cout << endl << endl;
         ref[refCount] = "Referance's name: " + name + "\nReference's company: " + company + "\nReference's address: " + address + 
-        "\nReference's phone number: " + phone + "\nReference's email address: " + email + "\nReference's position: " + position + "\n";
+        "\nReference's phone number: " + phone + "\nReference's email address: " + email + "\nReference's position: " + position + "\n"; // saving values in array for output to text file
     }
 } //function to write references to file
 
@@ -76,7 +76,10 @@ void errorMsg() {
 }
 // function to out put garbage on no input
 void garbage() {
+    cout << endl;
+    SetConsoleTextAttribute(hConsole, 12);
     cout << "Garbage!" << endl;
+    SetConsoleTextAttribute(hConsole, 15);
     this_thread::sleep_for(chrono::milliseconds(800));
 }
 // Function to prompt user to enter yes or no.
@@ -96,8 +99,8 @@ int main()
     int err  = 0; //initialize the variable "err" as 0
     int yrsExp;  //initialize the variable "yrsExp"
     string in[9] {"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"};//name=0,phone=1,grammar=2,spelling=3,email=4,skills=5,exp=6,edu=7,qual=8
-    string ref[3] {"No References", "Only one Reference", "Two References"};
-    string refName[3] {"No References", "No References", "No References"};
+    string ref[3] {"No References", "Only one Reference", "Two References"}; // string variables for future output to user
+    string refName[3] {"No References", "No References", "No References"}; //array to store references
     string ans;
     string result;                            //variables
     ofstream applicants;
@@ -128,12 +131,12 @@ int main()
     cout << endl;
 
 
-    while (err<=0) //while the variable "err" equals 0 this loop will run
+    while (err<=0) //while the variable "err" is equal to or less than 0, plays this loop
     {
-        cout << "(If you would like to quit the program press 'Q' at any time)" << endl;
-        yesNoMsg();
+        cout << "(If you would like to quit the program press 'Q' at any time)" << endl;// intruction for uses
+        yesNoMsg(); //calls yes no function
         
-           SetConsoleTextAttribute(hConsole, 13);
+           SetConsoleTextAttribute(hConsole, 13);//color
         cout << "====================================================" <<endl;
         cout << "                                                    " <<endl;
         cout << "         Does the resume have a name on it?         " <<endl;
@@ -141,19 +144,19 @@ int main()
         cout << "====================================================" <<endl;
             SetConsoleTextAttribute(hConsole, 15);
         cout << endl;
-        cin >> ans;
-        cout << endl; cout << endl;       
+        cin >> ans; //user inputes y,n,or q
+        cout << endl; cout << endl; //space
 
             if (ans == "n" || ans == "N") //if user types "n" for ans input, play this loop
             {
-                garbage();
+                garbage(); //outputes "garbage"
                 exit(0); //exits the program
             }
             else if (ans == "y" || ans == "Y") //if user types "y" for ans input, play this loop
             {
                 cout << "Please enter name:" << endl << endl; //instructions for user
-                cin.ignore();
-                getline(cin, in[0]);
+                cin.ignore(); //ignores last cin
+                getline(cin, in[0]); //getting line fromin array (name)
                 ++err;
             }
             else if (ans== "q" || ans == "Q")//if user types "q" for ans input, play this loop
@@ -163,87 +166,87 @@ int main()
             }
             else //if ans doesn't equal n,y, or q this plays
             {
-            errorMsg();
+            errorMsg(); //outputes error message
             }
     }
-    err = 0;
-        while (err<=0)
-    { //function to check for phone number or not, if the user provides one enter it
-        yesNoMsg();
+    err = 0;// err is reset to 0
+        while (err<=0)//while the variable "err" is equal to or less than 0, plays this loop
+    { 
+        yesNoMsg(); //calling yes no function
         
-        SetConsoleTextAttribute(hConsole, 13);
+        SetConsoleTextAttribute(hConsole, 13);//color
         cout << "====================================================" <<endl;
         cout << "                                                    " <<endl;
         cout << "        Does the resume have a phone number?        " <<endl;
         cout << "                                                    " <<endl;
-        cout << "====================================================" <<endl;
+        cout << "====================================================" <<endl; //question for user
             SetConsoleTextAttribute(hConsole, 15);         
         cout << endl;        
-        cin >> ans;
+        cin >> ans; //user inputes y,n, or q
         cout << endl; cout << endl;
 
-            if (ans == "n" || ans == "N")
+            if (ans == "n" || ans == "N") //if user inputes n play this
             {
-                garbage();
-                exit(0);
+                garbage();//outputs "garbage"
+                exit(0);//exits program
             }
-            else if (ans == "y" || ans == "Y")
+            else if (ans == "y" || ans == "Y") //if user inputs y play this
             {
-                cout << "Please enter phone number:" << endl << endl;
-                cin.ignore();
-                getline(cin, in[1]);
-                ++err;
+                cout << "Please enter phone number:" << endl << endl; //intruction
+                cin.ignore(); //ignores last cin
+                getline(cin, in[1]); //calls in array position [1]
+                ++err; //add 1 value to err
             }
-            else if (ans== "q" || ans == "Q")
+            else if (ans== "q" || ans == "Q") //if user inputs q play this
             {
-                quitMsg();
-                exit(0);
+                quitMsg(); //quite message plays
+                exit(0); //exits the program
             }
-            else
+            else //otherwise play this loop
             {
-                errorMsg();
+                errorMsg(); //error message and asks for a retry
             }
     }
-    err = 0;
-        while (err<=0)
-    { //function to check for email or not, if the user provides one enter it
-        yesNoMsg();
+    err = 0; // err is reset to 0
+        while (err<=0) //while err is less then or equal to 0, play this loop
+    {
+        yesNoMsg(); //plays yes or no function
         
-            SetConsoleTextAttribute(hConsole, 13);
+            SetConsoleTextAttribute(hConsole, 13); //color
         cout << "====================================================" <<endl;
         cout << "                                                    " <<endl;
         cout << "       Does the resume have a e-mail address?       " <<endl;
         cout << "                                                    " <<endl;
-        cout << "====================================================" <<endl;
+        cout << "====================================================" <<endl; //user instruction
             SetConsoleTextAttribute(hConsole, 15);
         cout << endl;
-        cin >> ans;
+        cin >> ans; //user inputs answer
         cout << endl; cout << endl;
 
-            if (ans == "n" || ans == "N")
+            if (ans == "n" || ans == "N") //if user input n play this
             {
                     garbage();
                 exit(0);
             }
-            else if (ans == "y" || ans == "Y")
+            else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
             {
                 cout << "Please enter e-mail address:" << endl << endl;
                 cin.ignore();
                 getline(cin, in[4]);
                 ++err;
             }
-            else if (ans== "q" || ans == "Q")
+            else if (ans== "q" || ans == "Q")//if user inputs q play this
             {
-                quitMsg();
+                quitMsg();//exit message
                 exit(0);
             }
-            else
+            else //otherwise play this loop
             {
                 errorMsg();
             }
     }
-    err = 0;
-        while (err<=0)
+    err = 0; // err is reset to 0
+        while (err<=0) //while err is less than 0 play this loop
     { //function to check for spelling errors or not, if the user does, enter "Garbage", if not enter "No Spelling Errors"
         yesNoMsg();
         
@@ -257,28 +260,28 @@ int main()
         cout << endl;
         cin >> ans;
         
-            if (ans == "y" || ans == "Y")
+            if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
             {
                 garbage();
                 exit(0);
             }
-            else if (ans == "n" || ans == "N")
+            else if (ans == "n" || ans == "N") //if user input n play this
             {
-                in[3] = "No spelling errors."; //spelling=3
-                ++err;
+                in[3] = "No spelling errors."; //array position in[3] string is "no spelling errors"
+                ++err; //add 1 value to err
             }
-            else if (ans== "q" || ans == "Q")
+            else if (ans== "q" || ans == "Q")//if user inputs q play this
             {
-                quitMsg();
+                quitMsg();//exit message
                 exit(0);
             }
-            else
+            else //otherwise play this loop
             {
                 errorMsg();
             }
     }
      err = 0;
-        while (err<=0)
+        while (err<=0)//while err is less than or equal to 0 play this loop
     { //function to check for Grammatical errors or not, if the user does, enter "Garbage", if not enter "No Grammatical Errors"
         yesNoMsg();
         
@@ -292,30 +295,30 @@ int main()
         cout << endl;
         cin >> ans;
        
-            if (ans == "y" || ans == "Y")
+            if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
             {
                 garbage();
                 exit(0);
             }
-            else if (ans == "n" || ans == "N")
+            else if (ans == "n" || ans == "N") //if user input n play this
             {
                 in[2] = "No grammatical errors."; //grammar=2
                 ++err;
             }
-            else if (ans== "q" || ans == "Q")
+            else if (ans== "q" || ans == "Q")//if user inputs q play this
             {
-                quitMsg();
+                quitMsg();//exit message
                 exit(0);
             }
-            else
+            else //otherwise play this loop
             {
                 errorMsg();
             }
     }
-    err = 0; //function to check for qualifying skills or not, if the user does, enter move onto next section, if not break program
+    err = 0; // err is reset to 0
         while (fail == 4)
         {
-               while (err<=0)
+               while (err<=0) //while err is less than or equal to 0 play this loop
                {
                     yesNoMsg();
                     
@@ -329,30 +332,30 @@ int main()
                     cout << endl;
                     cin >> ans;
 
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N")//if user input n play this
                     {
                         --fail;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[5] = "Qualifying skills."; //skills=5
                         err++;
                         
                     }
-                    else if (ans == "q" || ans == "Q")
+                    else if (ans == "q" || ans == "Q")//if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
                 }   
-                err = 0;
+                err = 0;// err is reset to 0
                 if(fail == 4){
-                while (err<=0)
+                while (err<=0)//while err is less than or equal to 0 play this loop
                 {
                     yesNoMsg();
                     
@@ -366,32 +369,32 @@ int main()
                     cout << endl;
                     cin >> ans;
                     
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N") //if user input n play this
                     {
                         
                         fail = 2;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[6] = "Job related experience."; //exp=6
                         err++;
                         
                     }
-                    else if (ans == "q"|| ans == "Q")
+                    else if (ans == "q"|| ans == "Q") //if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
                 } 
                 }
                 if(fail == 4){   
-                err = 0;
-                while (err<=0)
+                err = 0;// err is reset to 0
+                while (err<=0)//while err is less than or equal to 0 play this loop
                 {  
                 
                     yesNoMsg();
@@ -406,34 +409,34 @@ int main()
                     cout << endl;
                     cin >> ans;
 
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N") //if user input n play this
                     {
                         
                         fail = 5;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 6;
                     }
-                    else if (ans == "q" || ans == "Q")
+                    else if (ans == "q" || ans == "Q")//if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
                 }
                 }        
         }
-        err = 0;
+        err = 0;// err is reset to 0
         while (fail == 3)
         {  
-                while (err<=0)
+                while (err<=0)//while err is less than or equal to 0 play this loop
                 {
                     yesNoMsg();
                     
@@ -447,30 +450,30 @@ int main()
                     cout << endl;
                     cin >> ans;
 
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N") //if user input n play this
                     {
                         
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[6] = "Job related experience."; //exp=6
                         ++err;
                     }
-                    else if (ans == "q"|| ans == "Q")
+                    else if (ans == "q"|| ans == "Q")//if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
                 }
                 if( fail == 3){    
-                err = 0;
-                while (err<=0)
+                err = 0;// err is reset to 0
+                while (err<=0)//while err is less than or equal to 0 play this loop
                 {
                    yesNoMsg();
 
@@ -484,24 +487,24 @@ int main()
                     cout << endl;
                     cin >> ans;
 
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N") //if user input n play this
                     {
                         
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[7] = "Job related education."; //edu=7
                         ++err;
                         fail = 5;
                     }
-                    else if (ans== "q"|| ans == "Q")
+                    else if (ans== "q"|| ans == "Q")//if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
@@ -510,7 +513,7 @@ int main()
             }
             while (fail == 2)
             {
-                 while (err<=0)
+                 while (err<=0)//while err is less than or equal to 0 play this loop
                 {
                     yesNoMsg();
 
@@ -524,23 +527,23 @@ int main()
                     cout << endl;
                     cin >> ans;
 
-                    if (ans == "n" || ans == "N")
+                    if (ans == "n" || ans == "N") //if user input n play this
                     {
                         fail = 0;
                         break;
                     }
-                    else if (ans == "y" || ans == "Y")
+                    else if (ans == "y" || ans == "Y")//if user types "y" for ans input, play this loop
                     {
                         in[7] = "Job related education."; //edu-7
                         ++err;
                         fail = 5;
                     }
-                    else if (ans == "q" || ans == "Q")
+                    else if (ans == "q" || ans == "Q")//if user inputs q play this
                     {
                         quitMsg();
                         exit(0);
                     }
-                    else
+                    else //otherwise play this loop
                     {
                         errorMsg();
                     }
@@ -593,7 +596,7 @@ int main()
             cout << in[8] << endl;
                 SetConsoleTextAttribute(hConsole, 15);
         }
-        else
+        else //otherwise play this loop
         {
             in[8] = "This applicant is not qualified";
                 SetConsoleTextAttribute(hConsole, 12);
