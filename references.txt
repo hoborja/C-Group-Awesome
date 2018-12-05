@@ -196,3 +196,102 @@ Reference's phone number:
 Reference's email address: 
 Reference's position: 
 
+Candidate name: 
+Reference number: (0)
+
+
+Reference: Referance's name: dfsgfdsgfds
+Reference's company: gfdsgfdsgfds
+Reference's address: gfdsgfdsgfds
+Reference's phone number: fgdsgfds
+Reference's email address: gfsgfds
+Reference's position: gfdsgfds
+
+Candidate name: 
+Reference number: (1)
+
+
+Reference: Referance's name: gfshgfd
+Reference's company: fgdsgdfs
+Reference's address: gfdsgfd
+Reference's phone number: gfdsgfds
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (2)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (0)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (1)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (2)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (0)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (1)
+
+
+Reference: Referance's name: 
+Reference's company: y
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+
+Candidate name: 
+Reference number: (2)
+
+
+Reference: Referance's name: 
+Reference's company: 
+Reference's address: 
+Reference's phone number: 
+Reference's email address: 
+Reference's position: 
+

@@ -547,9 +547,19 @@ int main()
                     {
                         errorMsg();
                     }
-                }    
+                } 
+               
             }
-            if (yrsExp == 0){
+            SetConsoleTextAttribute(hConsole, 9);
+            cout << "=====================================================" <<endl;
+            cout << "                                                     " <<endl;
+            cout << "How many years of experience does the applicant have?" <<endl;
+            cout << "                                                     " <<endl;
+            cout << "=====================================================" <<endl;
+            SetConsoleTextAttribute(hConsole, 15);
+            cout << endl;
+            cin >> yrsExp;
+            if (yrsExp == 0 && fail >= 2){
                 candType = "Intern Candidate";
                 references(refName, 3);
                 //for(int i=0; i < 3; ++i) {
@@ -558,7 +568,7 @@ int main()
                 //}
                 referencesWrite(refName, in, 3, refFile);
             }
-            else if (yrsExp <= 5 && yrsExp > 0){
+            else if (yrsExp <= 5 && yrsExp > 0 && fail >= 2){
                  candType = "Junior Candidate"; 
                  references(refName, 3);
                 //for(int i=0; i < 3; ++i) {
@@ -567,7 +577,7 @@ int main()
                 //}
                 referencesWrite(refName, in, 3, refFile);
             }
-            else if (yrsExp > 5){
+            else if (yrsExp > 5 && fail >= 2){
                 candType = "Senior Candidate";
                 references(refName, 3);
                 //for(int i=0; i < 3; ++i) {
@@ -615,6 +625,7 @@ int main()
         applicants << in[6] << endl;
         applicants << in[7] << endl;
         applicants << in[8] << endl;
+        applicants << candType << endl;
         applicants << "\n\n\n\n";
         applicants.close();
          
