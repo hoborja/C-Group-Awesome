@@ -27,14 +27,23 @@ void references(string ref[3],int refCount) {
         string email;
         string company;
         string position; 
-        cout << endl << endl << endl;        
+        cout << endl << endl << endl;
+                   SetConsoleTextAttribute(hConsole, 13);
+        cout << "====================================================" <<endl;
+        cout << "                                                    " <<endl;
+        cout << "             ENTER APPLICANTS REFERENCES            " <<endl;
+        cout << "                                                    " <<endl;
+        cout << "====================================================" <<endl;
+                   SetConsoleTextAttribute(hConsole, 15);  
+        this_thread::sleep_for(chrono::milliseconds(400));
+        cout << endl << endl << endl;     
         cout << "Please enter reference Name: " << endl << endl;
         getline(cin, name);
         cout << endl << endl;
         cout << "Please enter the company " << name << " worked at: " << endl << endl;
         getline(cin, company);
         cout << endl << endl;
-        cout << "Please enter "<< name << "'s Address: " << endl << endl;
+        cout << "Please enter "<< company << "'s Address: " << endl << endl;
         getline(cin, address);
         cout << endl << endl;
         cout << "Please enter "<< name << "'s phone number: " << endl << endl;
@@ -68,6 +77,7 @@ void errorMsg() {
 
 void garbage() {
     cout << "Garbage!" << endl;
+    this_thread::sleep_for(chrono::milliseconds(800));
 }
 
 void yesNoMsg() {
@@ -174,7 +184,7 @@ int main()
 
             if (ans == "n" || ans == "N")
             {
-                    garbage();
+                garbage();
                 exit(0);
             }
             else if (ans == "y" || ans == "Y")
@@ -629,6 +639,6 @@ int main()
          
         cout << endl;
         quitMsg();
-
+    system("PAUSE");
     return 0;
 }
