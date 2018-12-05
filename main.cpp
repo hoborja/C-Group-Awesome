@@ -58,7 +58,7 @@ void references(string ref[3],int refCount) {
         ref[refCount] = "Referance's name: " + name + "\nReference's company: " + company + "\nReference's address: " + address + 
         "\nReference's phone number: " + phone + "\nReference's email address: " + email + "\nReference's position: " + position + "\n";
     }
-} //function for references
+} //function to write references to file
 
 void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile) {
     for(int refCount = 0; refCount < 3; ++refCount){
@@ -68,18 +68,18 @@ void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile
         refFile << "Reference: " << ref[refCount] << endl;
         refFile.close();
     }
-}//function for reference
+}//function for error message
 void errorMsg() {
     SetConsoleTextAttribute(hConsole, 12);
     cout << "Error!" << endl; //error message
     SetConsoleTextAttribute(hConsole, 15);
 }
-
+// function to out put garbage on no input
 void garbage() {
     cout << "Garbage!" << endl;
     this_thread::sleep_for(chrono::milliseconds(800));
 }
-
+// Function to prompt user to enter yes or no.
 void yesNoMsg() {
     cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
         SetConsoleTextAttribute(hConsole, 14); 
