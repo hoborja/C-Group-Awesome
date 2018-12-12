@@ -65,7 +65,7 @@ void referencesWrite(string ref[3],string in[9], int refCount, ofstream& refFile
         
         refFile.open ("references.txt", fstream::app);
         refFile << "Candidate name: " << in[0] << "\nReference number: " << "(" << refCount<< ")" << "\n\n\n";
-        refFile << "Reference: " << ref[refCount] << endl;
+        refFile << "Reference: \n\n" << ref[refCount] << endl;
         refFile.close();
     }
 }//function for error message
@@ -550,6 +550,9 @@ int main()
                 } 
                
             }
+            this_thread::sleep_for(chrono::milliseconds(400));// this is a timed delay before next code is run
+            cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; cout << endl; 
+            this_thread::sleep_for(chrono::milliseconds(400)); 
             SetConsoleTextAttribute(hConsole, 9);
             cout << "=====================================================" <<endl;
             cout << "                                                     " <<endl;
